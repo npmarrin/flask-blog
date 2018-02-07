@@ -1,0 +1,8 @@
+# https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_schema
+# "In MySQL a schema is synonymous with a database"
+sqlalchemy:
+  schema: 'blog'
+  hostname: 'localhost'
+  username: 'database_blog_user' 
+  password: 'database_blog_user_password'
+  driver: 'mysql pymysql'

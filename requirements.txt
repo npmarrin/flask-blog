@@ -1,0 +1,6 @@
+# pip requirements file
+# usage: pip install -r requirements.txt
+Flask==0.12.2
+Flask-SQLAlchemy==2.3.2
+PyMySQL==0.8.0
+PyYAML==3.12
