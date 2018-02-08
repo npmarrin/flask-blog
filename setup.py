@@ -33,4 +33,3 @@ setup(
     # Note that this is a string of words separated by whitespace, not a list.
     keywords='flask sqlalchemy',
 )
-

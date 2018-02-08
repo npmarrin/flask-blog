@@ -24,6 +24,3 @@ def _on_connect(dbapi_connection, **_):
 
 
 db = SQLAlchemy()
-
-def hello():
-  print('hello')

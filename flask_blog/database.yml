@@ -2,7 +2,7 @@
 # "In MySQL a schema is synonymous with a database"
 sqlalchemy:
   schema: 'blog'
-  hostname: 'localhost'
+  hostname: 'database'
   username: 'database_blog_user' 
   password: 'database_blog_user_password'
   driver: 'mysql pymysql'

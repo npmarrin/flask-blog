@@ -1,5 +1,5 @@
 """
-    View Helper Functions
+    View Decorator Functions
 """
 
 # https://docs.python.org/3/library/functools.html#functools.wraps
