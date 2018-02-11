@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block container %}
+<form class="form-inline" action="{{ url_for('auth.login') }}" method="post">
+  <div class="form-group">
+    <label for="loginEmail">Email</label>
+    <input type="email" name="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="loginPassword">Password</label>
+    <input type="password" name="password" class="form-control" id="loginPassword" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+<form action="{{ url_for('auth.register') }}" method="post">
+  <div class="form-group">
+    <label for="registerName">Name</label>
+    <input type="text" name="name" class="form-control" id="registerName" placeholder="Enter full name">
+  </div>
+  <div class="form-group">
+    <label for="registerEmail">Email address</label>
+    <input type="email" name="email" class="form-control" id="registerEmail" aria-describedby="registerEmailHelp" placeholder="Enter email">
+    <small id="registerEmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="registerPassword">Password</label>
+    <input type="password" name="password" class="form-control" id="registerPassword" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+{% endblock %}

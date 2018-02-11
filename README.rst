@@ -24,6 +24,18 @@ References
 - flasky_
 - running-your-flask-application-over-https_
 - wsgi-standalone_
+- flask-by-example-8-blueprints_
+- creating-a-custom-jinja2-filter_
+- templating_
+- jinja_
+- be-pythonic-init-py_
+- bootstrap-css-github_
+- flask-organizing_
+- constraint-validation-html_
+- bcrypt-hashed-password_
+- sqlalchemy-orm-tutorial_
+- sqlalchemy-dialects-mysql_
+- pep8-imports_
 
 .. _flask-large-application-example: https://github.com/Robpol86/Flask-Large-Application-Example
 .. _flask-by-example: https://github.com/realpython/flask-by-example
@@ -40,3 +52,15 @@ References
 .. _flasky: https://github.com/miguelgrinberg/flasky
 .. _running-your-flask-application-over-https: https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
 .. _wsgi-standalone: http://flask.pocoo.org/docs/0.12/deploying/wsgi-standalone/
+.. _flask-by-example-8-blueprints: https://danidee10.github.io/2016/11/20/flask-by-example-8.html
+.. _creating-a-custom-jinja2-filter: https://www.packtpub.com/mapt/book/web_development/9781783983407/2/ch02lvl1sec21/creating-a-custom-jinja2-filter
+.. _templating: http://flask.pocoo.org/docs/0.12/templating/
+.. _jinja: http://jinja.pocoo.org/
+.. _be-pythonic-init-py: http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html
+.. _bootstrap-css-github: https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap.css
+.. _flask-organizing: http://exploreflask.com/en/latest/organizing.html
+.. _constraint-validation-html : https://css-tricks.com/form-validation-part-1-constraint-validation-html/
+.. _bcrypt-hashed-password: https://stackoverflow.com/questions/5881169/what-column-type-length-should-i-use-for-storing-a-bcrypt-hashed-password-in-a-d
+.. _sqlalchemy-orm-tutorial: http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
+.. _sqlalchemy-dialects-mysql: http://docs.sqlalchemy.org/en/latest/dialects/mysql.html
+.. _pep8-imports: https://www.python.org/dev/peps/pep-0008/#imports

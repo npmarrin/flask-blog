@@ -6,6 +6,7 @@ services:
       - "5000:5000"
     depends_on:
       - database
+      - email
     volumes:
       - .:/opt/flask/blog
   database:
@@ -18,3 +19,8 @@ services:
     ports:
       - "3306:3306"
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+  email:
+    image: catatnight/postfix
+    environment:
+      - maildomain=mail.example.com
+      - smtp_user=relay@mail.example.com:relay

@@ -4,7 +4,9 @@
 
 # https://docs.python.org/3/library/functools.html#functools.wraps
 from functools import wraps
+
 from flask import flash, redirect, session, url_for
+
 
 LOGIN_ERROR = 'You need to login first.'
 REDIRECT_LOGIN_ERROR = 'users.login'

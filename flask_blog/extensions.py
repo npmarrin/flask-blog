@@ -2,9 +2,12 @@
 """
 
 from logging import getLogger
+
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from sqlalchemy.event import listens_for
 from sqlalchemy.pool import Pool
+
 
 LOG = getLogger(__name__)
 
@@ -24,3 +27,4 @@ def _on_connect(dbapi_connection, **_):
 
 
 db = SQLAlchemy()
+bcrypt = Bcrypt()
