@@ -38,3 +38,4 @@ class DevelopmentConfig(Config):
     MAIL_USERNAME = 'relay@mail.example.com'
     MAIL_PASSWORD = 'relay'
     MAIL_SUPPRESS_SEND = False
+    SECRET_KEY = 'd26e1b0ee19b03a7ac98f37e1efe0762ad64f7305356'

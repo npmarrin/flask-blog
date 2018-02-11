@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_blog.auth.views import auth as auth_blueprint
 
-from . import db, bcrypt
+from . import db, bcrypt, csrf
 from .config import DevelopmentConfig
 
 
@@ -13,4 +13,6 @@ def create_app():
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
     db.init_app(app)
     bcrypt.init_app(app)
+    csrf.init_app(app)
+
     return app

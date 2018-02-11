@@ -1,8 +1,9 @@
 from flask import render_template, redirect, url_for
 from flask import Blueprint, request, jsonify
-from flask_blog import db, bcrypt
+from flask_blog import db
 
 from .models import User
+from .forms import RegistrationForm, LoginForm
 
 
 auth = Blueprint('auth', __name__)
@@ -10,42 +11,33 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+
+    form = LoginForm()
+
     if request.method == 'POST':
+        if form.validate_on_submit():
+            user = User.query.filter_by(email=request.form['email']).first()
 
-        user = User.query.filter_by(email=request.form['email']).first()
-
-        if not user:
-            return redirect(url_for('.register'))
-
-        if user.verify_password(request.form['password']):
-            return jsonify({'name': user.name, 'email': user.email})
-        else:
-            return jsonify({'error': 'Username or Password invalid'})
-    else:
-        return render_template('auth/login.html')
+            if user and user.verify_password(request.form['password']):
+                return jsonify({'name': user.name, 'email': user.email})
+        return jsonify(form.errors)
+    return render_template('auth/login.html', form=form)
 
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
+
+    form = RegistrationForm()
+
     if request.method == 'POST':
+        if form.validate_on_submit():
+            registrant = User(name=request.form['name'],
+                              email=request.form['email'])
 
-        json_response = {'register_name': '', 'register_email': '', 'register_password': ''}
+            registrant.password = request.form['password']
 
-        if 'name' in request.form.keys():
-            json_response['register_name'] = request.form['name']
-
-        if 'email' in request.form.keys():
-            json_response['register_email'] = request.form['email']
-
-        if 'password' in request.form.keys():
-            json_response['register_password'] = request.form['password']
-
-        registrant = User(name=json_response['register_name'],
-                          email=json_response['register_email'])
-        registrant.password = json_response['register_password']
-
-        db.session.add(registrant)
-        db.session.commit()
-        return jsonify(json_response)
-    else:
-        return render_template('auth/register.html')
+            db.session.add(registrant)
+            db.session.commit()
+            return jsonify({'name': registrant.name, 'email': registrant.email})
+        return jsonify(form.errors)
+    return render_template('auth/register.html', form=form)

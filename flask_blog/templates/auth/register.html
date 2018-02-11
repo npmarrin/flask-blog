@@ -4,6 +4,7 @@
 
 {% block container %}
 <form class="form-inline" action="{{ url_for('auth.login') }}" method="post">
+  <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
   <div class="form-group">
     <label for="loginEmail">Email</label>
     <input type="email" name="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
@@ -15,6 +16,7 @@
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
 <form action="{{ url_for('auth.register') }}" method="post">
+  <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
   <div class="form-group">
     <label for="registerName">Name</label>
     <input type="text" name="name" class="form-control" id="registerName" placeholder="Enter full name">
