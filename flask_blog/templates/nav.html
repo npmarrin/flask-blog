@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <i class="fab fa-expeditedssl fa-lg"></i>
+    Blog
+  </a>
+
+  <ul class="navbar-nav ml-auto mr-sm-5">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ user.1 }}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <form id="logoutForm" action="{{ url_for('auth.logout') }}" method="post">
+          <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
+        </form>
+        <a class="dropdown-item" href="#" onclick="$('#logoutForm').submit()">Logout</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+{% endblock %}

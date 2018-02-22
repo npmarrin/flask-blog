@@ -36,6 +36,14 @@ References
 - sqlalchemy-orm-tutorial_
 - sqlalchemy-dialects-mysql_
 - pep8-imports_
+- http-auth_
+- flask-basic-auth_
+- string-literal-concatenation_
+- http-response-codes_
+- token-based-authentication-with-flask_
+- deferred-callbacks_
+- fix-missing-csrf-token-issues-with-flask_
+- Form_validation_
 
 .. _flask-large-application-example: https://github.com/Robpol86/Flask-Large-Application-Example
 .. _flask-by-example: https://github.com/realpython/flask-by-example
@@ -64,3 +72,11 @@ References
 .. _sqlalchemy-orm-tutorial: http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
 .. _sqlalchemy-dialects-mysql: http://docs.sqlalchemy.org/en/latest/dialects/mysql.html
 .. _pep8-imports: https://www.python.org/dev/peps/pep-0008/#imports
+.. _http-auth: http://php.net/manual/en/features.http-auth.php
+.. _flask-basic-auth: http://flask.pocoo.org/snippets/8/
+.. _string-literal-concatenation : https://docs.python.org/2/reference/lexical_analysis.html#string-literal-concatenation
+.. _http-response-codes: https://developer.twitter.com/en/docs/basics/response-codes
+.. _token-based-authentication-with-flask: https://realpython.com/blog/python/token-based-authentication-with-flask/
+.. _deferred-callbacks: http://flask.pocoo.org/docs/0.12/patterns/deferredcallbacks/#deferred-callbacks
+.. _fix-missing-csrf-token-issues-with-flask: https://nickjanetakis.com/blog/fix-missing-csrf-token-issues-with-flask
+.. _Form_validation : https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation

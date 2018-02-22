@@ -10,7 +10,10 @@ ORM_KEY = 'sqlalchemy'
 
 def get_database_uri():
     uri = ''
-    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), DATABASE_YAML), 'r') as file:
+    with open(
+            os.path.join(os.path.abspath(os.path.dirname(__file__)),
+                         DATABASE_YAML),
+            'r') as file:
         db_config = yaml.load(file)
         if ORM_KEY in db_config:
             uri = '{driver}://{username}:{password}@{host}/{schema}'.format(
@@ -29,6 +32,7 @@ class Config:
     # https://raw.githubusercontent.com/maxcountryman/flask-bcrypt/master/flask_bcrypt.py
     BCRYPT_HANDLE_LONG_PASSWORDS = True
     BCRYPT_LOG_ROUNDS = 12
+    JWT_ALGORITHM = 'HS256'
 
 
 class DevelopmentConfig(Config):
@@ -39,3 +43,7 @@ class DevelopmentConfig(Config):
     MAIL_PASSWORD = 'relay'
     MAIL_SUPPRESS_SEND = False
     SECRET_KEY = 'd26e1b0ee19b03a7ac98f37e1efe0762ad64f7305356'
+    SERVER_NAME = 'local.docker:5000'
+    REMEMBER_ME_DAYS = 5
+    SESSION_COOKIE_SECURE = False
+    OTHER_COOKIE_SECURE = False

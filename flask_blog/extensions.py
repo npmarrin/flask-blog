@@ -14,10 +14,11 @@ LOG = getLogger(__name__)
 
 @listens_for(Pool, 'connect', named=True)
 def _on_connect(dbapi_connection, **_):
-    """Set MySQL mode to TRADITIONAL on databases that don't set this automatically.
+    """Set MySQL mode to TRADITIONAL on databases that don't set this
+       automatically.
 
-    Without this, MySQL will silently insert invalid values in the database, causing very long debugging sessions in the
-    long run.
+    Without this, MySQL will silently insert invalid values in the database,
+    causing very long debugging sessions in the long run.
     http://www.enricozini.org/2012/tips/sa-sqlmode-traditional/
     https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional
     """

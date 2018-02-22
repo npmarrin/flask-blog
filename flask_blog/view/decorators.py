@@ -5,19 +5,17 @@
 # https://docs.python.org/3/library/functools.html#functools.wraps
 from functools import wraps
 
-from flask import flash, redirect, session, url_for
+from flask import request, jsonify, render_template
 
 
-LOGIN_ERROR = 'You need to login first.'
-REDIRECT_LOGIN_ERROR = 'users.login'
-
-
-def login_required(func):
-    @wraps(func)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return func(*args, **kwargs)
-        else:
-            flash(LOGIN_ERROR)
-            return redirect(url_for(REDIRECT_LOGIN_ERROR))
-    return wrap
+def validate_form_on_submit(form_name, template):
+    def decorator(func):
+        @wraps(func)
+        def wrap(*args, **kwargs):
+            form = form_name()
+            if request.method == 'POST':
+                if form.validate_on_submit():
+                    return func(*args, **kwargs)
+            return render_template(template, form=form)
+        return wrap
+    return decorator

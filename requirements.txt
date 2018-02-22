@@ -9,3 +9,4 @@ Flask-WTF==0.14.2
 PyMySQL==0.8.0
 PyYAML==3.12
 gunicorn==19.7.1
+PyJWT==1.5.3

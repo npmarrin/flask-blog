@@ -1,6 +1,6 @@
 """A setuptools based setup module.
 See:
-   https://github.com/pypa/sampleproject/blob/master/setup.py 
+   https://github.com/pypa/sampleproject/blob/master/setup.py
 """
 
 # Always prefer setuptools over distutils
