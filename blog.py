@@ -1,5 +1,5 @@
 from flask_migrate import Migrate
-from flask import render_template, session, request, jsonify
+from flask import render_template, session, request, jsonify, url_for
 
 from flask_blog.application import create_app
 from flask_blog.extensions import db
@@ -30,3 +30,28 @@ def page_not_found(e):
 @app.shell_context_processor
 def make_shell_context():
     return dict(db=db, User=User)
+
+
+@app.cli.command()
+def list_routes():
+    """List all app routes"""
+    import urllib
+    output = []
+    for rule in app.url_map.iter_rules():
+        options = {}
+        for arg in rule.arguments:
+            options[arg] = "[{0}]".format(arg)
+
+        methods = ','.join(rule.methods)
+        url = url_for(rule.endpoint, **options)
+        line = urllib.parse.unquote(
+            "{:35s} {:35s} {}".format(
+                rule.endpoint,
+                methods,
+                url
+            )
+        )
+        output.append(line)
+
+    for line in sorted(output):
+        print(line)
